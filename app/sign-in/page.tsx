@@ -19,9 +19,12 @@ export default async function SignInPage({
     const redirectTo = appUrl(`/auth/callback?next=${encodeURIComponent(next ?? "/dashboard")}`);
 
     const { error } = await supabase.auth.signInWithOtp({
+      
       email,
       options: { emailRedirectTo: redirectTo, shouldCreateUser: true },
+      
     });
+    
     if (error) {
       redirect(`/sign-in?error=${encodeURIComponent(error.message)}`);
     }
@@ -53,6 +56,9 @@ export default async function SignInPage({
             />
           </div>
           <button type="submit" className="btn-primary w-full">Send magic link</button>
+          <Link href="/">
+          <button className="bg-gradient-to-r from-purple-800 to-blue-600 mt-3 p-3 rounded-lg text-white font-bold ">Banck Home</button>
+          </Link>
         </form>
         {error && <p className="text-xs text-red-600 mt-4 text-center">{error}</p>}
         <p className="text-xs text-gray-500 mt-6 text-center">
