@@ -77,6 +77,8 @@ export default function SignerView({ token, pdfUrl, documentTitle, senderName, r
     }
   }
 
+  // FiX BUG TEST
+console.log("Fields received:", fields);
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       <header className="border-b bg-white sticky top-0 z-10">
@@ -106,6 +108,9 @@ export default function SignerView({ token, pdfUrl, documentTitle, senderName, r
             {Array.from(new Array(numPages ?? 0), (_, i) => {
               const pageNum = i + 1;
               const pageFields = fields.filter((f) => f.page === pageNum);
+
+              // FIX BUG TEST
+              console.log("Page:", pageNum, pageFields);
               return (
                 <div key={pageNum} className="relative mb-4 mx-auto shadow-sm" style={{ width }}>
                   <Page pageNumber={pageNum} width={width} renderAnnotationLayer={false} renderTextLayer={false} />

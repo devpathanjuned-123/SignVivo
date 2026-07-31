@@ -24,6 +24,7 @@ export async function POST(req: Request) {
   }
 
   const workspaceId = await getDefaultWorkspaceId(supabase);
+  console.log(workspaceId)
   if (!workspaceId) return NextResponse.json({ error: "No workspace" }, { status: 400 });
 
   // Create the document row first so we have an id for the storage path.

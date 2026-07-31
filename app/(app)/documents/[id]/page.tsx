@@ -69,8 +69,8 @@ export default async function DocumentDetailPage({ params }: { params: Promise<{
 
   return (
     <div>
-      <div className="mb-6">
-        <Link href="/dashboard" className="text-sm text-gray-600 hover:underline">← Dashboard</Link>
+      <div className="mb-6 ml-32">
+        <Link href="/dashboard" className="text-sm text-gray-600 hover:underline ml-10">← Dashboard</Link>
         <h1 className="text-2xl font-semibold mt-2">{doc.title}</h1>
         <p className="text-sm text-gray-600">
           Status: <strong>{doc.status}</strong> · Created {formatDate(doc.created_at)}
@@ -79,7 +79,7 @@ export default async function DocumentDetailPage({ params }: { params: Promise<{
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-[1fr_360px] gap-6">
+      <div className="grid lg:grid-cols-[1fr_360px] gap-6 ml-32">
         <section className="space-y-6">
           <div className="card p-4">
             <h2 className="font-semibold mb-3">Files</h2>
